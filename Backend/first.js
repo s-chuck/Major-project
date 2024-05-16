@@ -40,9 +40,9 @@ app.get('/books', async (req, res) => {
     await client.connect();
     const database = client.db("BooksDB");
     const collection = database.collection("books");
-    console.log(collection.length === 0);
+    
     const books = await collection.find({}).toArray();
-    console.log(books.length === 0);
+    
     res.json(books);
     
   } catch (error) {
