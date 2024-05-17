@@ -15,8 +15,7 @@ const port = process.env.PORT || 3000;
 const uri = process.env.MONGODB_URI;
 
 const client = new MongoClient(uri, {
-  tls: true,
-  tlsAllowInvalidCertificates: false,
+  tls: true
 });
 
 // Connect to MongoDB Atlas
