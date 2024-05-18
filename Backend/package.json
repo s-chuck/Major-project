@@ -4,7 +4,7 @@
   "description": "This is my personal project what i want to acheive with this a free and open database for those who wants data on specific topic but can't get from somewhere",
   "main": "first.js",
   "scripts": {
-    "start": "node first.js"
+    "start": "nodemon first.js"
   },
   "author": "Sumit Aswal",
   "license": "ISC",

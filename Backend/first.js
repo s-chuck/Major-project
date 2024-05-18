@@ -11,7 +11,7 @@ try {
 
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 const uri = process.env.MONGODB_URI;
 
 const client = new MongoClient(uri);
@@ -57,18 +57,22 @@ app.get('/books', async (req, res) => {
 
 app.get('/recipes', async (req, res) => {
   try {
+    await client.connect();
     const database = client.db("recipiesDB");
-    const collection = database.collection("recipes");
+    const collection = database.collection("Recipies");
     const recipes = await collection.find({}).toArray();
     res.json(recipes);
   } catch (error) {
     console.error("Error fetching recipes:", error);
     res.status(500).json({ error: 'Internal server error' });
+  }finally {
+    await client.close();
   }
 });
 
 app.get('/countries', async (req, res) => {
   try {
+    await client.connect();
     const database = client.db("countryDB");
     const collection = database.collection("countries");
     const countries = await collection.find({}).toArray();
@@ -76,6 +80,8 @@ app.get('/countries', async (req, res) => {
   } catch (error) {
     console.error("Error fetching countries:", error);
     res.status(500).json({ error: 'Internal server error' });
+  }finally {
+    await client.close();
   }
 });
 
