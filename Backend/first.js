@@ -14,9 +14,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const uri = process.env.MONGODB_URI;
 
-const client = new MongoClient(uri, {
-  tls: true
-});
+const client = new MongoClient(uri);
 
 // Connect to MongoDB Atlas
 async function connectToDatabase() {
