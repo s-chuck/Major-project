@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 app.get('/books', async (req, res) => {
   try {
     await client.connect();
-    const database = client.db("BooksDB");
+    const database = client.db("booksDB");
     const collection = database.collection("books");
     
     const books = await collection.find({}).toArray();
@@ -58,7 +58,7 @@ app.get('/books', async (req, res) => {
 app.get('/recipes', async (req, res) => {
   try {
     await client.connect();
-    const database = client.db("recipiesDB");
+    const database = client.db("RecipiesDB");
     const collection = database.collection("Recipies");
     const recipes = await collection.find({}).toArray();
     res.json(recipes);
@@ -73,7 +73,7 @@ app.get('/recipes', async (req, res) => {
 app.get('/countries', async (req, res) => {
   try {
     await client.connect();
-    const database = client.db("countryDB");
+    const database = client.db("countriesDB");
     const collection = database.collection("countries");
     const countries = await collection.find({}).toArray();
     res.json(countries);
