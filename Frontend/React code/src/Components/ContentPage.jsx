@@ -34,19 +34,19 @@ const ContentPage = () => {
         </button>
         <button 
           className='bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300'
-          onClick={() => handleCopy('https://www.google.com/recipes')}
+          onClick={() => handleCopy('https://major-project-1-62rn.onrender.com/recipes')}
         >
           Recipes
         </button>
         <button 
           className='bg-yellow-500 hover:bg-yellow-600 text-white py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300'
-          onClick={() => handleCopy('https://www.google.com/currencies')}
+          onClick={() => handleCopy('https://major-project-1-62rn.onrender.com/recipes')}
         >
           Currencies
         </button>
         <button 
           className='bg-red-500 hover:bg-red-600 text-white py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300'
-          onClick={() => handleCopy('https://www.google.com/countries')}
+          onClick={() => handleCopy('https://major-project-1-62rn.onrender.com/countries')}
         >
           Countries
         </button>
